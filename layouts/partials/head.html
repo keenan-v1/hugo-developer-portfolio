@@ -27,6 +27,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/mailgo@0.9.14/dist/mailgo.min.js" defer></script>
 
+{{ if .Site.Params.analytics.site }}
+  {{ "<!--Plausible Analytics-->" | safeHTML }}
+  <script defer data-domain="{{ .Site.Params.analytics.site }}" src="https://plausible.io/js/script.js"></script>
+{{ end }}
+
   {{ "<!--Favicon-->" | safeHTML }}
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
